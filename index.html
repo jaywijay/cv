@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Resume - Start Bootstrap Theme</title>
+        <title>arifwijayaa</title>
         <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
@@ -27,6 +27,7 @@
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">Experience</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">Education</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
                     <li class="nav-item"><a href="assets/pdf/CV_Arif.pdf" download class="nav-link">Download CV</a></li>
                     <!-- <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#interests">Interests</a></li> -->
                 </ul>
@@ -41,6 +42,9 @@
                         Muhammad Arif 
                         <span class="text-primary">Fathah Wijaya</span>
                     </h1>
+
+                    <div class="typed-text">
+                      </div>
                     <div class="subheading mb-5">
                         Jatiasih, Bekasi 17424 · 082211024365 ·
                         <a href="mailto:ariffathahwijaya@gmail.com" class="linkcolor">ariffathahwijaya@gmail.com</a>
@@ -159,7 +163,28 @@
                 </div>
             </section>
             <hr class="m-0" />
-            <!-- Interests-->
+            <!-- Contact-->
+            <section class="resume-section" id="contact">
+                <div class="resume-section-content">
+                    <h2 class="mb-3">Contact</h2>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Subject</label>
+                        <input type="subject" class="form-control" id="exampleFormControlInput2">
+                      </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Message</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      </div>
+                      <div class="mb-3">
+                        <input type="submit" class="btn btn-dark bg-primary" value="Send Email" onclick="sendEmail()"></input>
+                      </div>
+                </div>            
+            </section>
+
             <!-- <section class="resume-section" id="interests">
                 <div class="resume-section-content">
                     <h2 class="mb-5">Interests</h2>
@@ -173,5 +198,19 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+        <script src="https://smtpjs.com/v3/smtp.js"></script> 
+        <script>
+            function sendEmail(){
+                Email.send({
+                    SecureToken : "<your generated token>",
+                    To : 'ariffathahwijaya@gmail.com',
+                    From : document.getElementById("exampleFormControlInput1"),
+                    Subject : document.getElementById("exampleFormControlInput2"),
+                    Body : document.getElementById("exampleFormControlTextarea1")
+                }).then(
+                      message => alert("mail sent successfully")
+                );
+            }
+        </script>
     </body>
 </html>

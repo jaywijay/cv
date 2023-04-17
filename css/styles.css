@@ -11450,8 +11450,28 @@ section.resume-section .resume-section-content {
 }
 
   
-  /* Styles for dark mode */
-  .dark-mode #content {
-    background-color: black;
-    color: white;
-  }
+.typed-text {
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.typed-text span {
+  display: inline-block;
+  animation: typing 3s steps(10, end), blink 0.5s step-end infinite alternate;
+  vertical-align: bottom;
+}
+
+.typed-text span:last-child {
+  border-right: none;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
